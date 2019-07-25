@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 项目说明 -->
+    <groupId>com.ixchou</groupId>
+    <artifactId>ixchou</artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- 基本信息 -->
+    <description>爱新筹 - 多模块构建: 主项目</description>
+    <name>ixchou - main - project</name>
+    <packaging>pom</packaging>
+
+    <!-- 继承说明：继承 SpringBoot 提供的父工程 -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.5.9.RELEASE</version>
+        <relativePath/>
+    </parent>
+
+    <modules>
+        <module>../ixchou-core</module>
+    </modules>
+
+    <properties>
+        <!-- Java version -->
+        <java_version>1.8</java_version>
+
+        <!-- Test libs -->
+        <junit_version>4.12</junit_version>
+
+        <!-- Logging libs -->
+        <slf4j_version>1.7.25</slf4j_version>
+        <logback_version>1.0.13</logback_version>
+
+        <!-- Spring libs-->
+        <spring_beans_version>5.0.6.RELEASE</spring_beans_version>
+
+        <!-- plugins libs -->
+        <mv_compiler_version>3.8.0</mv_compiler_version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${junit_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${mv_compiler_version}</version>
+        </dependency>
+
+        <!-- 日志相关库 -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j_version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+            <version>${slf4j_version}</version>
+        </dependency>
+
+        <!-- Spring 相关-->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>${spring_beans_version}</version>
+        </dependency>
+    </dependencies>
+
+    <!-- 编译依赖 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${mv_compiler_version}</version>
+                <configuration>
+                    <source>${java_version}</source>
+                    <target>${java_version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
