@@ -25,6 +25,8 @@
 
     <modules>
         <module>../ixchou-core</module>
+        <module>../ixchou-api</module>
+        <module>../ixchou-model</module>
     </modules>
 
     <properties>
