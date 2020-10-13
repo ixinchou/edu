@@ -34,7 +34,7 @@
         <java_version>1.8</java_version>
 
         <!-- Test libs -->
-        <junit_version>4.12</junit_version>
+        <junit_version>4.13.1</junit_version>
 
         <!-- Logging libs -->
         <slf4j_version>1.7.25</slf4j_version>
